@@ -217,7 +217,7 @@ export default function MonetaryVelocity() {
                   src="https://fred.stlouisfed.org/graph/graph-landing.php?g=1W10z&width=1275&height=610" 
                   className="w-full h-full border-none grayscale group-hover:grayscale-0 transition-all duration-700"
                   scrolling="no"
-                  allowtransparency="true"
+                  allowTransparency={true}
                   loading="lazy"
                 />
               </div>
