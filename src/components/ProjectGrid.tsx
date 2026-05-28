@@ -17,23 +17,11 @@ interface Project {
 const projects: Project[] = [
   { 
     id: 1, 
-    title: "master's thesis", 
-    category: "research / signals", 
-    color: "bg-accent", 
-    href: "/research",
-    options: [
-      { label: "abstract", href: "/research" },
-      { label: "methodology", href: "/research" },
-      { label: "data logs", href: "/research" },
-      { label: "view full", href: "/research" }
-    ]
-  },
-  { 
-    id: 2, 
-    title: "bmw experience", 
-    category: "industry / technical service", 
+    title: "work", 
+    category: "industry / technical service / bmw", 
     color: "bg-gray-300", 
     href: "/work",
+    video: "https://media.tenor.com/q04ErcYx150AAAAM/bmw-m330i-drift.gif",
     options: [
       { label: "digitalization", href: "/work" },
       { label: "diagnostics", href: "/work" },
@@ -42,69 +30,20 @@ const projects: Project[] = [
     ]
   },
   { 
-    id: 3, 
-    title: "data + geography", 
-    category: "maps / models / places", 
-    color: "bg-gray-200", 
-    href: "/data-geography",
-    options: [
-      { label: "remote sensing", href: "/data-geography" },
-      { label: "housing rights", href: "/data-geography/housing-rights", previewUrl: "https://ece-476-interactive-article.vercel.app/" },
-      { label: "lidar mapping", href: "/data-geography" },
-      { label: "view all", href: "/data-geography" }
-    ]
-  },
-  { 
-    id: 4, 
-    title: "engineering systems", 
-    category: "hardware / networks / signals", 
-    color: "bg-gray-800", 
+    id: 2, 
+    title: "projects", 
+    category: "engineering / research / code", 
+    color: "bg-gray-400", 
     href: "/engineering",
     options: [
-      { label: "cpu design", href: "/engineering" },
-      { label: "metal detector", href: "/engineering" },
-      { label: "digital soundboard", href: "/engineering" },
-      { label: "ocr logic", href: "/engineering" }
+      { label: "master's thesis", href: "/research" },
+      { label: "data + geography", href: "/data-geography" },
+      { label: "engineering systems", href: "/engineering" },
+      { label: "cookbook", href: "/cookbook/index.html" }
     ]
   },
   { 
-    id: 5, 
-    title: "about", 
-    category: "bio / resume / contact", 
-    color: "bg-gray-100", 
-    href: "/about",
-    options: [
-      { label: "bio", href: "/about" },
-      { label: "curriculum vitae", href: "/NolanGriffithResume2026.pdf" },
-      { label: "connect", href: "/contact" }
-    ]
-  },
-  { 
-    id: 6, 
-    title: "software + interfaces", 
-    category: "web / interaction / tools", 
-    color: "bg-gray-400", 
-    href: "/software",
-    options: [
-      { label: "cookbook", href: "/work/cooper-cookbook" }
-    ]
-  },
-  { 
-    id: 7, 
-    title: "travel blog", 
-    category: "travel / cities / blog", 
-    color: "bg-accent", 
-    href: "/blog", 
-    video: "/travel-video.mp4",
-    options: [
-      { label: "2026", href: "/blog" },
-      { label: "2025", href: "/blog" },
-      { label: "2024", href: "/blog" },
-      { label: "2023", href: "/blog" }
-    ]
-  },
-  { 
-    id: 8, 
+    id: 3, 
     title: "writing", 
     category: "essays / infrastructure / labor", 
     color: "bg-gray-600", 
@@ -117,16 +56,17 @@ const projects: Project[] = [
     ]
   },
   { 
-    id: 9, 
-    title: "archive", 
-    category: "experiments / old work", 
-    color: "bg-accent/50", 
-    href: "/archive",
+    id: 4, 
+    title: "travel blog", 
+    category: "travel / cities / blog", 
+    color: "bg-accent", 
+    href: "/blog", 
+    video: "/travel-video.mp4",
     options: [
-      { label: "high school", href: "/archive" },
-      { label: "old photos", href: "/archive" },
-      { label: "papers", href: "/archive" },
-      { label: "experiments", href: "/archive" }
+      { label: "2026", href: "/blog" },
+      { label: "2025", href: "/blog" },
+      { label: "2024", href: "/blog" },
+      { label: "2023", href: "/blog" }
     ]
   },
 ]
@@ -135,8 +75,8 @@ export function ProjectGrid() {
   const [hoveredIdx, setHoveredIdx] = useState<number | null>(null)
   const [activePreview, setActivePreview] = useState<{ url: string; label: string } | null>(null)
 
-  const hoveredRow = hoveredIdx !== null ? Math.floor(hoveredIdx / 3) : null
-  const hoveredCol = hoveredIdx !== null ? hoveredIdx % 3 : null
+  const hoveredRow = hoveredIdx !== null ? Math.floor(hoveredIdx / 2) : null
+  const hoveredCol = hoveredIdx !== null ? hoveredIdx % 2 : null
 
   return (
     <div className="relative">
@@ -167,11 +107,11 @@ export function ProjectGrid() {
         className="grid gap-1 px-1 h-[100vh] md:h-[90vh]"
         animate={{
           gridTemplateColumns: hoveredCol !== null 
-            ? [0, 1, 2].map(i => i === hoveredCol ? '1.8fr' : '0.6fr').join(' ')
-            : '1fr 1fr 1fr',
+            ? [0, 1].map(i => i === hoveredCol ? '1.8fr' : '0.6fr').join(' ')
+            : '1fr 1fr',
           gridTemplateRows: hoveredRow !== null
-            ? [0, 1, 2].map(i => i === hoveredRow ? '1.8fr' : '0.6fr').join(' ')
-            : '1fr 1fr 1fr'
+            ? [0, 1].map(i => i === hoveredRow ? '1.8fr' : '0.6fr').join(' ')
+            : '1fr 1fr'
         }}
         transition={{ type: "spring", stiffness: 120, damping: 20, mass: 1 }}
       >
