@@ -12,7 +12,7 @@ const researchProjects = [
   },
   {
     title: "senior project (ece-395)",
-    description: "fall 2026, spring 2027. advised by: professor neveen shlayan, professor stella banou, the cooper union for the advancement of science and art.",
+    description: "fall 2026 — spring 2027. advised by: professor neveen shlayan, professor stella banou, the cooper union for the advancement of science and art.",
     tags: ["upcoming", "electrical engineering", "capstone"]
   }
 ];
