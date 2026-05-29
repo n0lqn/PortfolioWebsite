@@ -10,7 +10,7 @@ const projects = [
     title: "Cooper Cookbook (v3.4.0)",
     description: "A comprehensive digital cookbook system. This static preview showcases the frontend interface, originally designed with a Spring Boot and SQL backend for recipe management and collaboration.",
     github: "https://github.com/n0lqn/cooper-cookbook",
-    link: "/electrical-engineering/cookbook/index.html",
+    link: "/work/cooper-cookbook",
     tags: ["web", "frontend", "ui/ux", "database-design"]
   },
   {
