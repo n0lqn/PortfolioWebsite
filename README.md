@@ -1,36 +1,54 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nolan Griffith's Portfolio
 
-## Getting Started
+This is the source code for my personal portfolio website, built with **Next.js** and deployed via **GitHub Pages**.
 
-First, run the development server:
+## Local Development (Portfolio)
+To run the portfolio locally:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Cooper Cookbook Backend Setup
+The Cooper Cookbook project, featured in my Engineering section, is a full-stack application (Spring Boot + PostgreSQL). To run it locally:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Prerequisites
+- **Docker Desktop** (Recommended for the full-stack environment)
+- **Java Development Kit (JDK) 17+** (Required if running the backend outside of Docker)
+- **Maven** (Required if running the backend outside of Docker)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Option 1: Docker (Recommended)
+This is the fastest way to get the full stack (UI, App, and Database) running.
 
-## Learn More
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/n0lqn/ECE366CooperCookbook
+   cd ECE366CooperCookbook
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+2. **Start the Environment:**
+   ```bash
+   docker compose up -d --build
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Stop/Restart the Environment:**
+   ```bash
+   docker compose down
+   docker compose up -d
+   ```
+   *Access the UI at: **http://localhost:5173***
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Option 2: Local Backend (Without Docker)
+1. **Navigate to the Backend:**
+   `cd ECE366CooperCookbook`
 
-## Deploy on Vercel
+2. **Run the Backend:**
+   `./mvnw spring-boot:run`
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Confirm Port:**
+   By default, the backend will listen on **port 8080**.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+*If you receive a connection error or a "backend not found" message, verify that the Spring Boot server is active on port 8080 or that Docker containers are running.*
