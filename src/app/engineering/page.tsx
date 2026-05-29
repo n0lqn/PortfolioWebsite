@@ -7,6 +7,13 @@ import { motion } from "framer-motion";
 
 const projects = [
   {
+    title: "Cooper Cookbook (v3.4.0)",
+    description: "A comprehensive digital cookbook system. This static preview showcases the frontend interface, originally designed with a Spring Boot and SQL backend for recipe management and collaboration.",
+    github: "https://github.com/n0lqn/cooper-cookbook",
+    link: "/electrical-engineering/cookbook/index.html",
+    tags: ["web", "frontend", "ui/ux", "database-design"]
+  },
+  {
     title: "Habla-Ghjeepeetee CPU",
     description: "A custom CPU architecture designed and implemented as part of ECE 251. Features a custom instruction set, data path, and control unit logic.",
     github: "https://github.com/n0lqn/final-project-ece-251-spring-2024-habla-ghjeepeetee",
@@ -45,47 +52,42 @@ export default function Engineering() {
                 <div className="flex-1">
                   <div className="flex items-center gap-4 mb-4">
                     <h2 className="text-3xl font-bold tracking-tight">{project.title}</h2>
-                    <a href={project.github} target="_blank" rel="noopener noreferrer" className="opacity-40 hover:opacity-100 transition-opacity">
-                      <GitHubIcon className="w-6 h-6" />
-                    const projects = [
-                      {
-                        title: "Cooper Cookbook (v3.4.0)",
-                        description: "A comprehensive digital cookbook system. This static preview showcases the frontend interface, originally designed with a Spring Boot and SQL backend for recipe management and collaboration.",
-                        github: "https://github.com/n0lqn/cooper-cookbook",
-                        link: "/electrical-engineering/cookbook/index.html",
-                        tags: ["web", "frontend", "ui/ux", "database-design"]
-                      },
-                      {
-                        title: "Habla-Ghjeepeetee CPU",
-                    ...
-                                      <div className="flex flex-wrap gap-3 mb-8">
-                                        {project.tags.map(tag => (
-                                          <span key={tag} className="text-[10px] uppercase tracking-widest border border-foreground/20 px-2 py-1">
-                                            {tag}
-                                          </span>
-                                        ))}
-                                      </div>
+                    {project.github && (
+                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="opacity-40 hover:opacity-100 transition-opacity">
+                        <GitHubIcon className="w-6 h-6" />
+                      </a>
+                    )}
+                  </div>
+                  <p className="text-xl opacity-80 max-w-2xl mb-6">{project.description}</p>
+                  
+                  <div className="flex flex-wrap gap-3 mb-8">
+                    {project.tags.map(tag => (
+                      <span key={tag} className="text-[10px] uppercase tracking-widest border border-foreground/20 px-2 py-1">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
 
-                                      <div className="flex gap-4">
-                                        {project.github && (
-                                          <a 
-                                            href={project.github}
-                                            target="_blank"
-                                            rel="noopener noreferrer"
-                                            className="inline-block text-sm font-bold uppercase tracking-[0.2em] border-2 border-foreground px-6 py-3 hover:bg-foreground hover:text-background transition-colors"
-                                          >
-                                            view on github →
-                                          </a>
-                                        )}
-                                        {project.link && (
-                                          <a 
-                                            href={project.link}
-                                            className="inline-block text-sm font-bold uppercase tracking-[0.2em] bg-foreground text-background border-2 border-foreground px-6 py-3 hover:bg-transparent hover:text-foreground transition-colors"
-                                          >
-                                            view project →
-                                          </a>
-                                        )}
-                                      </div>
+                  <div className="flex gap-4">
+                    {project.github && (
+                      <a 
+                        href={project.github}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-block text-sm font-bold uppercase tracking-[0.2em] border-2 border-foreground px-6 py-3 hover:bg-foreground hover:text-background transition-colors"
+                      >
+                        view on github →
+                      </a>
+                    )}
+                    {project.link && (
+                      <a 
+                        href={project.link}
+                        className="inline-block text-sm font-bold uppercase tracking-[0.2em] bg-foreground text-background border-2 border-foreground px-6 py-3 hover:bg-transparent hover:text-foreground transition-colors"
+                      >
+                        view project →
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
             </motion.div>
