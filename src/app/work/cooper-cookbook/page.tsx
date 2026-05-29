@@ -196,8 +196,8 @@ export default function CooperCookbook() {
           <h3 className="text-xl font-bold lowercase tracking-widest">backend demo requires local server execution</h3>
           <p className="text-sm opacity-60 max-w-xl mx-auto leading-relaxed">
             the cooper cookbook is a full-stack application (java/spring boot + sql). 
-            for the interactive demo to function with a live database, please clone the repository and follow the setup instructions in the 
-            <a href="https://github.com/n0lqn/ECE366CooperCookbook#setup" target="_blank" rel="noopener noreferrer" className="font-bold underline hover:text-accent"> technical documentation</a>.
+            for the interactive demo to function with a live database, please clone the repository and run the backend on <strong>port 8080</strong>. 
+            if you see an error message, refer to the <a href="https://github.com/n0lqn/ECE366CooperCookbook#setup" target="_blank" rel="noopener noreferrer" className="font-bold underline hover:text-accent">technical documentation</a> for troubleshooting steps.
           </p>
           <div className="pt-4">
              <a 
