@@ -36,7 +36,7 @@ const projects: Project[] = [
     color: "bg-gray-400", 
     href: "/engineering",
     options: [
-      { label: "thesis & capstone", href: "/research", previewUrl: "coming soon!" },
+      { label: "capstone", href: "/research", previewUrl: "coming soon!" },
       { label: "electrical engineering", href: "/engineering" },
       { label: "interdisciplinary studies", href: "/data-geography" },
       { label: "research archive", href: "/archive" }

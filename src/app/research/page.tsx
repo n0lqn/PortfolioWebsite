@@ -17,7 +17,7 @@ const researchProjects = [
   }
 ];
 
-export default function Research() {
+export default function Capstone() {
   return (
     <main className="min-h-screen px-6 md:px-12 py-12" style={{ fontFamily: '"Courier New", Courier, monospace' }}>
       <div className="flex justify-between items-center mb-24">
@@ -28,7 +28,7 @@ export default function Research() {
       </div>
 
       <div className="max-w-screen-xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-16 uppercase">research.</h1>
+        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-16 uppercase">capstone.</h1>
         
         <div className="grid grid-cols-1 gap-12">
           {researchProjects.map((project, i) => (
@@ -41,12 +41,12 @@ export default function Research() {
             >
               <div className="flex flex-col md:flex-row justify-between items-start gap-6">
                 <div className="flex-1">
-                  <h2 className="text-3xl font-bold tracking-tight mb-4">{project.title}</h2>
-                  <p className="text-xl opacity-80 max-w-2xl mb-6">{project.description}</p>
+                  <h2 className="text-2xl font-bold tracking-tight mb-2 uppercase">{project.title}</h2>
+                  <p className="text-lg opacity-80 max-w-2xl mb-6 leading-relaxed">{project.description}</p>
                   
                   <div className="flex flex-wrap gap-3">
                     {project.tags.map(tag => (
-                      <span key={tag} className="text-[10px] uppercase tracking-widest border border-foreground/20 px-2 py-1">
+                      <span key={tag} className="text-[10px] uppercase tracking-widest border border-foreground/20 px-3 py-1 font-bold">
                         {tag}
                       </span>
                     ))}
