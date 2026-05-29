@@ -89,7 +89,7 @@ export function ContactForm() {
     setStatus("sending");
     
     try {
-      const response = await fetch("https://formspree.io/f/your-form-id", {
+      const response = await fetch("https://formspree.io/f/mgoqkdko", {
         method: "POST",
         body: formData,
         headers: {
