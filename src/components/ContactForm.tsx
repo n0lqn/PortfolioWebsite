@@ -181,7 +181,7 @@ export function ContactForm() {
           {status === "sending" && (
             <motion.div 
               key="sending"
-              className="flex items-center relative w-full h-full"
+              className="flex items-center relative w-full h-full min-h-[100px]"
             >
               <div className="flex">
                 {text.split("").map((char, i) => (
@@ -189,14 +189,14 @@ export function ContactForm() {
                     key={i}
                     initial={{ y: 0, opacity: 1, x: 0 }}
                     animate={{ 
-                      y: [0, -60, 15],
-                      x: [0, 80, 560 + (i * 2)],
+                      y: [0, -40, 10],
+                      x: [0, 40, 280 + (i * 2)],
                       opacity: [1, 1, 0],
-                      scale: [1, 1.2, 0.2]
+                      scale: [1, 1.1, 0.2]
                     }}
                     transition={{ 
-                      duration: 1.4, 
-                      delay: i * 0.04,
+                      duration: 1.2, 
+                      delay: i * 0.03,
                       times: [0, 0.4, 1],
                       ease: "easeInOut"
                     }}
@@ -208,21 +208,21 @@ export function ContactForm() {
               </div>
 
               <motion.div
-                initial={{ opacity: 0, x: 550, y: 15, scale: 0.5 }}
+                initial={{ opacity: 0, x: 260, y: 10, scale: 0.5 }}
                 animate={{ 
                   opacity: [0, 1, 1, 1, 0],
-                  x: [550, 550, 550, 1400, 1400],
+                  x: [260, 260, 260, 800, 1200],
                   scale: [0.5, 1.1, 1, 1, 1],
-                  rotate: [0, 0, 0, -15, -15]
+                  rotate: [0, 0, 0, -10, -20]
                 }}
                 transition={{ 
-                  duration: 3,
-                  times: [0, 0.1, 0.7, 0.9, 1],
+                  duration: 2.5,
+                  times: [0, 0.1, 0.6, 0.8, 1],
                   ease: "easeInOut"
                 }}
                 className="absolute text-accent"
               >
-                <svg width="60" height="45" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <svg width="50" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
