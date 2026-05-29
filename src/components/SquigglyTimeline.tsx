@@ -11,6 +11,7 @@ interface TimelineItem {
   logo: string
   type: string
   details: string
+  image?: string
 }
 
 const timelineData: TimelineItem[] = [
@@ -19,7 +20,7 @@ const timelineData: TimelineItem[] = [
   { date: "sept 2021 — june 2022", duration: "9m", title: "legal services intern", company: "BMW OF NORTH AMERICA, LLC", logo: "/bmw-logo.png", type: "experience", details: "Managed and categorized the electronic law library for improved file access and collaborated with paralegals to proofread legal documentation." },
   { date: "2022 — 2026", duration: "4y", title: "bachelor of engineering in electrical engineering", company: "THE COOPER UNION", logo: "/cooper-logo.png", type: "education", details: "Bachelor of Engineering in Electrical Engineering (ABET Accredited), with a concentration in Computer Engineering and minor in Political Economy." },
   { date: "may 2024 — sept 2024", duration: "4m", title: "electromobility intern", company: "BAYERISCHE MOTOREN WERKE AG", logo: "/bmw-logo.png", type: "experience", details: "Represented technical interests with infrastructure partners, implemented new charging session functions, and unified data systems to increase operational efficiency by 25%." },
-  { date: "may 2025 — aug 2025", duration: "3m", title: "energy management intern", company: "BMW MANUFACTURING CO., LLC", logo: "/bmw-logo.png", type: "experience", details: "Utilized acoustic imagery for air leak detection, developed a predictive forecasting model (Prophet) for cost/consumption planning (9% error rate), and managed 280+ solar panel inverters." },
+  { date: "may 2025 — aug 2025", duration: "3m", title: "energy management intern", company: "BMW MANUFACTURING CO., LLC", logo: "/bmw-logo.png", type: "experience", details: "Utilized acoustic imagery for air leak detection, developed a predictive forecasting model (Prophet) for cost/consumption planning (9% error rate), and managed 280+ solar panel inverters.", image: "/energy-management.jpg" },
   { date: "june 2026 — aug 2026", duration: "3m", title: "technical service intern", company: "BMW OF NORTH AMERICA, LLC", logo: "/bmw-logo.png", type: "experience", details: "Supporting technical service operations with a focus on electrical/mechanical vehicle diagnostics, digitalization, and process improvement." },
 ]
 
@@ -87,6 +88,11 @@ export function SquigglyTimeline() {
                     animate={{ opacity: hoveredIdx === i ? 1 : 0 }}
                     className={`absolute top-1/2 -translate-y-1/2 ${item.type === "education" ? "left-[140%]" : "right-[140%]"} w-96 p-8 bg-foreground text-background text-sm pointer-events-none rounded shadow-2xl z-50`}
                 >
+                    {item.image && (
+                      <div className="mb-4 overflow-hidden rounded">
+                        <img src={item.image} alt={item.title} className="w-full h-auto object-cover" />
+                      </div>
+                    )}
                     {item.details}
                 </motion.div>
               </div>
