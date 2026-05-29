@@ -31,7 +31,41 @@ export default function Capstone() {
       </div>
 
       <div className="max-w-5xl mx-auto">
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-16 uppercase">capstone.</h1>
+        <motion.div 
+          className="relative mb-16 inline-flex cursor-default"
+          initial="initial"
+          whileHover="hover"
+        >
+          {"capstone".split("").map((char, i) => (
+            <motion.h1
+              key={i}
+              className="text-5xl md:text-7xl font-bold tracking-tighter select-none uppercase"
+              initial="initial"
+              animate="dance"
+              variants={{
+                initial: { y: 0 },
+                hover: {
+                  y: [0, -20, 0],
+                  transition: { duration: 0.4, ease: "easeOut" }
+                },
+                dance: {
+                  y: [0, -20, 0],
+                  transition: { duration: 0.4, ease: "easeOut", delay: 1 + (i * 0.08) }
+                }
+              }}
+            >
+              {char}
+            </motion.h1>
+          ))}
+          <motion.h1
+            className="text-5xl md:text-7xl font-bold tracking-tighter select-none"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.2, duration: 0.3 }}
+          >
+            .
+          </motion.h1>
+        </motion.div>
         
         <div className="grid grid-cols-1 gap-16">
           {researchProjects.map((project, i) => (
