@@ -200,7 +200,7 @@ export default function CooperCookbook() {
               <div className="w-3 h-3 rounded-full bg-foreground/20" />
             </div>
             <div className="text-[10px] tracking-widest font-bold opacity-60">
-              cooper cookbook local preview (v3.4.0)
+              cooper cookbook static preview (v3.4.0)
             </div>
             <a 
               href={cookbookPreviewUrl} 
