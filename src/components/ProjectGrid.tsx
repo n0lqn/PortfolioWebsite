@@ -48,6 +48,7 @@ const projects: Project[] = [
     category: "essays / infrastructure / labor", 
     color: "bg-gray-600", 
     href: "/writing",
+    video: "/writing-bg.mov",
     options: [
       { label: "monetary velocity", href: "/writing/monetary-velocity", previewUrl: "https://fred.stlouisfed.org/graph/graph-landing.php?g=1W10z&width=1000&height=550" },
       { label: "feeling work", href: "/writing/blue-collar-archive", previewUrl: "https://lawrencemigration.phillipscollection.org/sites/default/files/styles/panel/public/TPC_Panel3_900.jpg" },
