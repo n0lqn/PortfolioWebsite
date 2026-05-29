@@ -7,11 +7,14 @@ import { motion } from "framer-motion";
 const researchProjects = [
   {
     title: "master's thesis project",
-    description: "fall 2027\nprospective master's thesis research."
+    date: "fall 2027",
+    description: "prospective master's thesis research. stay tuned!"
   },
   {
     title: "senior project (ece-395)",
-    description: "fall 2026 — spring 2027\nadvised by: professors stella banou and neveen shlayan\ncourses ece 395 and ece 396 constitute the year-long senior design project. students work in small groups on projects chosen with the advice and consent of the faculty adviser. projects may be oriented towards research or product development, and may be in any area of electrical and computer engineering, such as in: computer engineering, signal processing (imaging, sensor arrays, multimedia), telecommunications, computer networks, microwaves, optics, advanced electronics, vlsi chip design, or an interdisciplinary area such as robotics or bioengineering. students perform all aspects of project management, such as scheduling, budgeting, system design and developing milestones, as well as technical work including hardware and software implementation, testing and performance evaluation. students also give several spontaneous and rehearsed oral presentations and prepare written reports. students attend weekly lectures covering: social, economic, legal and ethical issues; safety and laboratory practice; design methodologies; technical writing; preparation of multimedia presentations and tailoring presentations to target audiences."
+    date: "fall 2026 — spring 2027",
+    advisors: "advised by: professors stella banou and neveen shlayan",
+    description: "courses ece 395 and ece 396 constitute the year-long senior design project. students work in small groups on projects chosen with the advice and consent of the faculty adviser. projects may be oriented towards research or product development, and may be in any area of electrical and computer engineering, such as in: computer engineering, signal processing (imaging, sensor arrays, multimedia), telecommunications, computer networks, microwaves, optics, advanced electronics, vlsi chip design, or an interdisciplinary area such as robotics or bioengineering. students perform all aspects of project management, such as scheduling, budgeting, system design and developing milestones, as well as technical work including hardware and software implementation, testing and performance evaluation. students also give several spontaneous and rehearsed oral presentations and prepare written reports. students attend weekly lectures covering: social, economic, legal and ethical issues; safety and laboratory practice; design methodologies; technical writing; preparation of multimedia presentations and tailoring presentations to target audiences."
   }
 ];
 
@@ -25,23 +28,23 @@ export default function Capstone() {
         <ThemeToggle />
       </div>
 
-      <div className="max-w-screen-xl mx-auto">
+      <div className="max-w-5xl mx-auto">
         <h1 className="text-5xl md:text-7xl font-bold tracking-tighter mb-16 uppercase">capstone.</h1>
         
-        <div className="grid grid-cols-1 gap-12">
+        <div className="grid grid-cols-1 gap-16">
           {researchProjects.map((project, i) => (
             <motion.div 
               key={i}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              className="group border-b border-foreground/10 pb-12"
+              className="group border-b border-foreground/10 pb-16"
             >
-              <div className="flex flex-col md:flex-row justify-between items-start gap-6">
-                <div className="flex-1">
-                  <h2 className="text-2xl font-bold tracking-tight mb-4 uppercase">{project.title}</h2>
-                  <p className="text-lg opacity-80 max-w-3xl leading-relaxed whitespace-pre-line">{project.description}</p>
-                </div>
+              <div className="flex flex-col gap-2">
+                <h2 className="text-2xl font-bold tracking-tight uppercase">{project.title}</h2>
+                <div className="text-lg font-bold italic opacity-70">{project.date}</div>
+                {project.advisors && <div className="text-md italic opacity-60 font-serif">{project.advisors}</div>}
+                <p className="text-lg opacity-90 max-w-4xl leading-relaxed mt-4">{project.description}</p>
               </div>
             </motion.div>
           ))}
