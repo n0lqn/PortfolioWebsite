@@ -98,9 +98,12 @@ export function ContactForm() {
       });
       
       if (response.ok) {
-        setStatus("sent");
-        setTimeout(() => setStatus("idle"), 5000);
-        (e.target as HTMLFormElement).reset();
+        // Wait for the animation to finish (approx 2.5s) before showing 'sent'
+        setTimeout(() => {
+          setStatus("sent");
+          (e.target as HTMLFormElement).reset();
+          setTimeout(() => setStatus("idle"), 5000);
+        }, 2800);
       } else {
         throw new Error("Failed to send");
       }
