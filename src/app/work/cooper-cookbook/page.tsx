@@ -191,33 +191,23 @@ export default function CooperCookbook() {
           </ul>
         </div>
         </div>
-        {/* Live Preview Window - Even Larger */}
-        <div className="w-full h-[120vh] bg-background border border-foreground/20 shadow-2xl rounded-lg overflow-hidden flex flex-col">
-          <div className="bg-foreground/5 border-b border-foreground/10 p-3 flex items-center justify-between">
-            <div className="flex gap-1.5">
-              <div className="w-3 h-3 rounded-full bg-foreground/20" />
-              <div className="w-3 h-3 rounded-full bg-foreground/20" />
-              <div className="w-3 h-3 rounded-full bg-foreground/20" />
-            </div>
-            <div className="text-[10px] tracking-widest font-bold opacity-60">
-              cooper cookbook static preview (v3.4.0)
-            </div>
-            <a 
-              href={cookbookPreviewUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-[10px] tracking-widest font-bold hover:text-accent transition-colors"
-            >
-              open in new tab ↗
-            </a>
-          </div>
-          
-          <div className="flex-1 bg-white">
-            <iframe 
-              src={cookbookPreviewUrl} 
-              className="w-full h-full border-none"
-              title="Cooper Cookbook Preview"
-            />
+        {/* Live Preview Window - Disclaimer */}
+        <div className="w-full bg-foreground/[0.03] border border-foreground/10 p-8 rounded-lg text-center space-y-4">
+          <h3 className="text-xl font-bold lowercase tracking-widest">backend demo requires local server execution</h3>
+          <p className="text-sm opacity-60 max-w-xl mx-auto leading-relaxed">
+            the cooper cookbook is a full-stack application (java/spring boot + sql). 
+            for the interactive demo to function with a live database, please clone the repository and follow the setup instructions in the 
+            <a href="https://github.com/n0lqn/ECE366CooperCookbook#setup" target="_blank" rel="noopener noreferrer" className="font-bold underline hover:text-accent"> technical documentation</a>.
+          </p>
+          <div className="pt-4">
+             <a 
+               href="https://github.com/n0lqn/ECE366CooperCookbook#setup" 
+               target="_blank" 
+               rel="noopener noreferrer"
+               className="inline-block text-xs font-bold uppercase tracking-[0.2em] bg-accent text-white px-6 py-3 hover:bg-accent/80 transition-colors"
+             >
+               view setup instructions ↗
+             </a>
           </div>
         </div>
       </div>
