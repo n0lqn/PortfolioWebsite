@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const researchProjects = [
   {
     title: "master's thesis project (prospective fall 2027 graduate, the cooper union)",
-    description: "prospective master's thesis research.",
+    description: "prospective research. fall 2026 — spring 2027.",
     tags: ["upcoming", "electrical engineering", "capstone"]
   },
   {
