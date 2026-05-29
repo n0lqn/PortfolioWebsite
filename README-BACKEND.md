@@ -1,29 +1,42 @@
 # Setup Guide: Cooper Cookbook Backend
 
-To connect the Cooper Cookbook frontend to the required local backend, follow these steps:
+# Setup Guide: Cooper Cookbook Backend
 
 ## Prerequisites
-- Java Development Kit (JDK) 17 or higher
-- Maven
-- A running SQL database (configured in your environment)
+- **Docker Desktop** (Recommended for the full-stack environment)
+- **Java Development Kit (JDK) 17+** (Required if running the backend outside of Docker)
+- **Maven** (Required if running the backend outside of Docker)
 
-## Backend Setup
-1.  **Clone the Repository:**
-    `git clone https://github.com/n0lqn/ECE366CooperCookbook`
-    `cd ECE366CooperCookbook`
+## Option 1: Docker (Recommended)
+This is the fastest way to get the full stack (UI, App, and Database) running.
 
-2.  **Configuration:**
-    Ensure your `application.properties` (or `.env`) is configured with your SQL database credentials.
+1. **Clone the Repository:**
+   ```bash
+   git clone https://github.com/n0lqn/ECE366CooperCookbook
+   cd ECE366CooperCookbook
+   ```
 
-3.  **Run the Backend:**
-    Run the following command to start the Spring Boot backend:
-    `./mvnw spring-boot:run`
+2. **Start the Environment:**
+   ```bash
+   docker compose up -d --build
+   ```
 
-4.  **Confirm Port:**
-    By default, the backend will listen on **port 8080**.
+3. **Stop/Restart the Environment:**
+   ```bash
+   docker compose down
+   docker compose up -d
+   ```
+   *Access the UI at: **http://localhost:5173***
 
-5.  **Access:**
-    Once the backend is running, the frontend will automatically connect to it. Open your browser to the local development URL (usually provided by your frontend runner).
+## Option 2: Local Backend (Without Docker)
+1. **Navigate to the Backend:**
+   `cd ECE366CooperCookbook` (assuming you have a local SQL DB ready)
+
+2. **Run the Backend:**
+   `./mvnw spring-boot:run`
+
+3. **Confirm Port:**
+   By default, the backend will listen on **port 8080**.
 
 ---
-*If you receive a connection error or a "backend not found" message, verify that the Spring Boot server is active on port 8080.*
+*If you receive a connection error or a "backend not found" message, verify that the Spring Boot server is active on port 8080 or that Docker containers are running.*
