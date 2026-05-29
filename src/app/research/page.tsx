@@ -6,14 +6,12 @@ import { motion } from "framer-motion";
 
 const researchProjects = [
   {
-    title: "master's thesis project (prospective fall 2027 graduate, the cooper union)",
-    description: "prospective research. fall 2026 — spring 2027.",
-    tags: ["upcoming", "electrical engineering", "capstone"]
+    title: "master's thesis project",
+    description: "fall 2027\nprospective master's thesis research."
   },
   {
     title: "senior project (ece-395)",
-    description: "fall 2026 — spring 2027. advised by: professor neveen shlayan, professor stella banou, the cooper union for the advancement of science and art.",
-    tags: ["upcoming", "electrical engineering", "capstone"]
+    description: "fall 2026 — spring 2027\nadvised by: professors stella banou and neveen shlayan\ncourses ece 395 and ece 396 constitute the year-long senior design project. students work in small groups on projects chosen with the advice and consent of the faculty adviser. projects may be oriented towards research or product development, and may be in any area of electrical and computer engineering, such as in: computer engineering, signal processing (imaging, sensor arrays, multimedia), telecommunications, computer networks, microwaves, optics, advanced electronics, vlsi chip design, or an interdisciplinary area such as robotics or bioengineering. students perform all aspects of project management, such as scheduling, budgeting, system design and developing milestones, as well as technical work including hardware and software implementation, testing and performance evaluation. students also give several spontaneous and rehearsed oral presentations and prepare written reports. students attend weekly lectures covering: social, economic, legal and ethical issues; safety and laboratory practice; design methodologies; technical writing; preparation of multimedia presentations and tailoring presentations to target audiences."
   }
 ];
 
@@ -41,16 +39,8 @@ export default function Capstone() {
             >
               <div className="flex flex-col md:flex-row justify-between items-start gap-6">
                 <div className="flex-1">
-                  <h2 className="text-2xl font-bold tracking-tight mb-2 uppercase">{project.title}</h2>
-                  <p className="text-lg opacity-80 max-w-2xl mb-6 leading-relaxed">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-3">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="text-[10px] uppercase tracking-widest border border-foreground/20 px-3 py-1 font-bold">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                  <h2 className="text-2xl font-bold tracking-tight mb-4 uppercase">{project.title}</h2>
+                  <p className="text-lg opacity-80 max-w-3xl leading-relaxed whitespace-pre-line">{project.description}</p>
                 </div>
               </div>
             </motion.div>
