@@ -43,7 +43,7 @@ export default function Capstone() {
               <div className="flex flex-col gap-2">
                 <h2 className="text-2xl font-bold tracking-tight uppercase">{project.title}</h2>
                 <div className="text-lg font-bold italic opacity-70">{project.date}</div>
-                {project.advisors && <div className="text-md italic opacity-60 font-serif">{project.advisors}</div>}
+                {project.advisors && <div className="text-md italic opacity-60">{project.advisors}</div>}
                 <p className="text-lg opacity-90 max-w-4xl leading-relaxed mt-4">{project.description}</p>
               </div>
             </motion.div>
