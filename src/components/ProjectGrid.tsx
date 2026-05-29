@@ -23,10 +23,10 @@ const projects: Project[] = [
     href: "/work",
     video: "https://media.tenor.com/q04ErcYx150AAAAM/bmw-m330i-drift.gif",
     options: [
-      { label: "digitalization", href: "/work" },
-      { label: "diagnostics", href: "/work" },
-      { label: "munich residency", href: "/work" },
-      { label: "view all", href: "/work" }
+      { label: "legal", href: "/work" },
+      { label: "electromobility", href: "/work" },
+      { label: "energy management", href: "/work" },
+      { label: "technical service", href: "/work" }
     ]
   },
   { 
