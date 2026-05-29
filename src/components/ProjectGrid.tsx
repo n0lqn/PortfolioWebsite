@@ -36,10 +36,11 @@ const projects: Project[] = [
     color: "bg-gray-400", 
     href: "/engineering",
     options: [
-      { label: "coming soon!", href: "/research" },
-      { label: "data + geography", href: "/data-geography" },
-      { label: "engineering systems", href: "/engineering" },
-      { label: "cookbook", href: "/cookbook/index.html" }
+      { label: "thesis & capstone", href: "/research", previewUrl: "coming soon!" },
+      { label: "cookbook", href: "/cookbook/index.html" },
+      { label: "electrical engineering", href: "/engineering" },
+      { label: "interdisciplinary studies", href: "/data-geography" },
+      { label: "research archive", href: "/archive" }
     ]
   },
   { 
