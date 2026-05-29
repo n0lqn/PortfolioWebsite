@@ -6,16 +6,6 @@ import { motion } from "framer-motion";
 
 const researchProjects = [
   {
-    title: "Political Economy of Infrastructure",
-    description: "Research exploring the intersection of labor, policy, and built environments, focusing on how technical systems shape social outcomes.",
-    tags: ["policy", "labor", "urbanism"]
-  },
-  {
-    title: "Digitalization in Automotive Service",
-    description: "Analysis of automation and digital tool integration within technical service environments, conducted during BMW residency.",
-    tags: ["automation", "diagnostics", "efficiency"]
-  },
-  {
     title: "Thesis Project",
     description: "[To be populated]",
     tags: ["upcoming", "electrical engineering", "capstone"]
