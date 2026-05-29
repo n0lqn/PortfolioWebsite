@@ -85,20 +85,30 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
-    const name = formData.get("name") as string;
-    const subject = formData.get("subject") as string;
-    const message = formData.get("message") as string;
     
     setStatus("sending");
     
-    const mailtoUrl = `mailto:nolanrgriffith@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\n\n${message}`)}`;
-    
-    window.location.href = mailtoUrl;
-    
-    setTimeout(() => {
-      setStatus("sent");
-      setTimeout(() => setStatus("idle"), 2000);
-    }, 1000);
+    try {
+      const response = await fetch("https://formspree.io/f/your-form-id", {
+        method: "POST",
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      });
+      
+      if (response.ok) {
+        setStatus("sent");
+        setTimeout(() => setStatus("idle"), 5000);
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error("Failed to send");
+      }
+    } catch (error) {
+      console.error(error);
+      alert("Oops! There was a problem sending your message.");
+      setStatus("idle");
+    }
   };
 
   const text = "send message";
