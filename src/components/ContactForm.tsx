@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { sendEmail } from "@/app/actions/sendEmail";
 
 // Organized list with preferences at top and flags
 const countryCodes = [
@@ -86,14 +85,20 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
+    const name = formData.get("name") as string;
+    const subject = formData.get("subject") as string;
+    const message = formData.get("message") as string;
+    
     setStatus("sending");
-    try {
-      await sendEmail(formData);
-      setTimeout(() => setStatus("sent"), 3500);
-    } catch (error) {
-      console.error(error);
-      setStatus("idle");
-    }
+    
+    const mailtoUrl = `mailto:nolanrgriffith@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\n\n${message}`)}`;
+    
+    window.location.href = mailtoUrl;
+    
+    setTimeout(() => {
+      setStatus("sent");
+      setTimeout(() => setStatus("idle"), 2000);
+    }, 1000);
   };
 
   const text = "send message";
