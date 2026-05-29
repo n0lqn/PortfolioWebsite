@@ -14,6 +14,11 @@ const researchProjects = [
     title: "Digitalization in Automotive Service",
     description: "Analysis of automation and digital tool integration within technical service environments, conducted during BMW residency.",
     tags: ["automation", "diagnostics", "efficiency"]
+  },
+  {
+    title: "Thesis Project",
+    description: "[To be populated]",
+    tags: ["upcoming", "electrical engineering", "capstone"]
   }
 ];
 
