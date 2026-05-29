@@ -7,7 +7,12 @@ import { motion } from "framer-motion";
 const researchProjects = [
   {
     title: "Master's Thesis Project (prospective Fall 2027 graduate, The Cooper Union)",
-    description: "Senior Project (Fall 2026, Spring 2027 ECE-395), advised by: Professor Neveen Shlayan, Professor Stella Banou, The Cooper Union for the Advancement of Science and Art.",
+    description: "Prospective Master's thesis research.",
+    tags: ["upcoming", "electrical engineering", "capstone"]
+  },
+  {
+    title: "Senior Project (ECE-395)",
+    description: "Fall 2026, Spring 2027. Advised by: Professor Neveen Shlayan, Professor Stella Banou, The Cooper Union for the Advancement of Science and Art.",
     tags: ["upcoming", "electrical engineering", "capstone"]
   }
 ];
