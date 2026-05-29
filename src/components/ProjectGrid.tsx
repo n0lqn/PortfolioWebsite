@@ -36,7 +36,7 @@ const projects: Project[] = [
     color: "bg-gray-400", 
     href: "/engineering",
     options: [
-      { label: "master's thesis", href: "/research" },
+      { label: "coming soon!", href: "/research" },
       { label: "data + geography", href: "/data-geography" },
       { label: "engineering systems", href: "/engineering" },
       { label: "cookbook", href: "/cookbook/index.html" }
