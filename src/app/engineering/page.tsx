@@ -47,26 +47,45 @@ export default function Engineering() {
                     <h2 className="text-3xl font-bold tracking-tight">{project.title}</h2>
                     <a href={project.github} target="_blank" rel="noopener noreferrer" className="opacity-40 hover:opacity-100 transition-opacity">
                       <GitHubIcon className="w-6 h-6" />
-                    </a>
-                  </div>
-                  <p className="text-xl opacity-80 max-w-2xl mb-6">{project.description}</p>
-                  
-                  <div className="flex flex-wrap gap-3 mb-8">
-                    {project.tags.map(tag => (
-                      <span key={tag} className="text-[10px] uppercase tracking-widest border border-foreground/20 px-2 py-1">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                    const projects = [
+                      {
+                        title: "Cooper Cookbook (v3.4.0)",
+                        description: "A comprehensive digital cookbook system. This static preview showcases the frontend interface, originally designed with a Spring Boot and SQL backend for recipe management and collaboration.",
+                        github: "https://github.com/n0lqn/cooper-cookbook",
+                        link: "/electrical-engineering/cookbook/index.html",
+                        tags: ["web", "frontend", "ui/ux", "database-design"]
+                      },
+                      {
+                        title: "Habla-Ghjeepeetee CPU",
+                    ...
+                                      <div className="flex flex-wrap gap-3 mb-8">
+                                        {project.tags.map(tag => (
+                                          <span key={tag} className="text-[10px] uppercase tracking-widest border border-foreground/20 px-2 py-1">
+                                            {tag}
+                                          </span>
+                                        ))}
+                                      </div>
 
-                  <a 
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-block text-sm font-bold uppercase tracking-[0.2em] border-2 border-foreground px-6 py-3 hover:bg-foreground hover:text-background transition-colors"
-                  >
-                    view on github →
-                  </a>
+                                      <div className="flex gap-4">
+                                        {project.github && (
+                                          <a 
+                                            href={project.github}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-block text-sm font-bold uppercase tracking-[0.2em] border-2 border-foreground px-6 py-3 hover:bg-foreground hover:text-background transition-colors"
+                                          >
+                                            view on github →
+                                          </a>
+                                        )}
+                                        {project.link && (
+                                          <a 
+                                            href={project.link}
+                                            className="inline-block text-sm font-bold uppercase tracking-[0.2em] bg-foreground text-background border-2 border-foreground px-6 py-3 hover:bg-transparent hover:text-foreground transition-colors"
+                                          >
+                                            view project →
+                                          </a>
+                                        )}
+                                      </div>
                 </div>
               </div>
             </motion.div>

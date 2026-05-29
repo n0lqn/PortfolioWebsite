@@ -38,7 +38,6 @@ const projects: Project[] = [
     options: [
       { label: "thesis & capstone", href: "/research", previewUrl: "coming soon!" },
       { label: "electrical engineering", href: "/engineering" },
-      { label: "↳ cooper cookbook", href: "/electrical-engineering/cookbook/index.html" },
       { label: "interdisciplinary studies", href: "/data-geography" },
       { label: "research archive", href: "/archive" }
     ]
