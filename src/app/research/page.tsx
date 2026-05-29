@@ -38,11 +38,10 @@ export default function Capstone() {
         >
           {"capstone".split("").map((char, i) => (
             <motion.h1
-              key={i}
-              className="text-5xl md:text-7xl font-bold tracking-tighter select-none uppercase"
-              initial="initial"
-              animate="dance"
-              variants={{
+            key={i}
+            className="text-5xl md:text-7xl font-bold tracking-tighter select-none"
+            initial="initial"
+            animate="dance"              variants={{
                 initial: { y: 0 },
                 hover: {
                   y: [0, -20, 0],
