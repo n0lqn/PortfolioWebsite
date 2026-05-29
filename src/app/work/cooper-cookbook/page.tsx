@@ -4,7 +4,7 @@ import { ThemeToggle } from "@/components/ThemeToggle";
 import Link from "next/link";
 import { motion } from "framer-motion";
 
-const cookbookPreviewUrl = process.env.NEXT_PUBLIC_COOPER_COOKBOOK_URL || "http://localhost:3001";
+const cookbookPreviewUrl = "/electrical-engineering/cookbook/index.html";
 
 function DancingTitle({
   text,
