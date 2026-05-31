@@ -184,7 +184,7 @@ export default function CooperCookbook() {
         </div>
 
         {/* Live Preview Window */}
-        <div className="w-full h-[80vh] bg-background border border-foreground/20 shadow-2xl rounded-lg overflow-hidden flex flex-col">
+        <div className="w-full h-[160vh] bg-background border border-foreground/20 shadow-2xl rounded-lg overflow-hidden flex flex-col">
           <div className="bg-foreground/5 border-b border-foreground/10 p-3 flex items-center justify-between">
             <div className="flex gap-1.5">
               <div className="w-3 h-3 rounded-full bg-foreground/20" />
